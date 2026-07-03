@@ -9,13 +9,14 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     refresh_token_expire_days: int = 7
-    minio_endpoint: str = "localhost:9000"
-    minio_access_key: str = "agentmarket"
-    minio_secret_key: str = "change_me"
-    minio_bucket: str = "agentmarket-files"
-    minio_secure: bool = False
+    domain: str = "localhost"
 
-    # AI Provider — supports: openrouter, deepseek, openai
+    # Stripe
+    stripe_secret_key: str = ""
+    stripe_publishable_key: str = ""
+    stripe_webhook_secret: str = ""
+    stripe_subscription_price_id: str = "price_placeholder"
+
     ai_provider: str = "openrouter"
     openrouter_api_key: Optional[str] = ""
     deepseek_api_key: Optional[str] = ""
@@ -36,7 +37,6 @@ class Settings(BaseSettings):
             return {"provider": "openrouter", "api_key": self.openrouter_api_key,
                     "base_url": "https://openrouter.ai/api/v1", "model": model}
 
-    domain: str = "localhost"
     cors_origins_str: str = "http://localhost:3000,http://localhost:80,http://localhost:3001"
 
     @property
