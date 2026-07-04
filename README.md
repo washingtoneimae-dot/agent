@@ -1,6 +1,6 @@
 # AgentMarket — The Agentic Asset Marketplace
 
-**Token-powered marketplace for Skill Creation Files** — recipes that teach any AI agent how to build custom skills for specific domains.
+*review powered marketplace for Skill Creation Files** — recipes that teach any AI agent how to build custom skills for specific domains.
 
 > **Status:** MVP v0.2.0
 > **Stack:** Docker · FastAPI · PostgreSQL · React · n8n · Stripe
