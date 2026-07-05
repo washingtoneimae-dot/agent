@@ -1,9 +1,9 @@
 # AgentMarket — The Agentic Asset Marketplace
 
-*review powered marketplace for Skill Creation Files** — recipes that teach any AI agent how to build custom skills for specific domains.
+A review-powered marketplace for **Skill Creation Files** — recipes that teach any AI agent how to build custom skills for specific domains.
 
 > **Status:** MVP v0.2.0
-> **Stack:** Docker · FastAPI · PostgreSQL · React · n8n · Stripe
+> **Stack:** Docker · FastAPI · PostgreSQL · React · MinIO · Stripe
 > **License:** Private — all rights reserved
 
 ---
@@ -26,12 +26,16 @@ The platform's core innovation: a user selects up to 4 Skill Creation Files, pas
 git clone https://github.com/washingtoneimae-dot/agent.git
 cd agent
 cp .env.example .env
-# Edit .env: set DOMAIN, JWT_SECRET, AI_API_KEY, STRIPE keys
+# Edit .env: set DOMAIN, JWT_SECRET, and any API keys you want to use
 nano .env
 docker compose up -d
 ```
 
+> **First build takes 2-3 minutes** (compiling asyncpg + npm install). Subsequent starts are instant.
+
 Open http://localhost:80 — register as the first user (auto-admin).
+
+**Ports used:** 80 (nginx), 443 (SSL), 5432 (Postgres), 6379 (Redis), 9000-9001 (MinIO). Free these ports if something else is using them.
 
 ## Architecture
 
@@ -41,7 +45,6 @@ User (Browser / Agent Dashboard)
         ▼
   nginx (:80) ──► frontend (React + Tailwind, :3000)
         │       └─► api (FastAPI, :8000)
-        │       └─► n8n (workflow engine, :5678)
         │
         ├── postgres (:5432) — primary DB
         ├── redis (:6379) — cache + sessions
@@ -77,9 +80,11 @@ Floor: 10.0. Recalculated via admin endpoint.
 | Free | $0 | Browse marketplace, read chatrooms, view files |
 | Subscriber | $9/mo | Unlimited downloads, post tips, fork children, API access |
 
-## API Documentation
+## Documentation
 
-Full API reference at [API.md](./API.md).
+- **[API.md](./API.md)** — Full endpoint reference with curl examples
+- **[TECHNICAL.md](./TECHNICAL.md)** — Architecture, database schema, subsystems, dev setup, deployment, troubleshooting
+- **[FORMAT.md](./FORMAT.md)** — Skill Creation File format specification
 
 ## Marketplace Contents (Seeded)
 
@@ -102,7 +107,6 @@ Full API reference at [API.md](./API.md).
 | Database | PostgreSQL 16 + asyncpg |
 | Cache | Redis 7 |
 | File Storage | MinIO (S3-compatible) |
-| Workflow Engine | n8n (self-hosted) |
 | Reverse Proxy | nginx |
 | Payments | Stripe (subscriptions) |
 | AI | OpenRouter / DeepSeek / OpenAI (abstraction layer) |
@@ -110,14 +114,16 @@ Full API reference at [API.md](./API.md).
 
 ## Environment Variables
 
-See [.env.example](./.env.example) for all required vars.
+See [.env.example](./.env.example) for all required vars. At minimum you need `DOMAIN`, `DB_USER`, `DB_PASSWORD`, `JWT_SECRET`, `MINIO_ACCESS_KEY`, and `MINIO_SECRET_KEY`. Stripe and AI provider keys are optional — the app runs in demo mode without them.
 
 ## Project Structure
 
 ```
 agent/
-├── docker-compose.yml        # 7-service stack
+├── docker-compose.yml        # 6-service stack
 ├── API.md                    # Full API documentation
+├── TECHNICAL.md              # Technical deep-dive
+├── FORMAT.md                 # Skill Creation File spec
 ├── api/
 │   ├── app/
 │   │   ├── main.py           # FastAPI entry point
