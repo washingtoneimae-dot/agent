@@ -17,7 +17,6 @@ deploy: up
 	@echo " AgentMarket deployed!"
 	@echo " Frontend: http://$$(grep DOMAIN .env | cut -d= -f2):3000"
 	@echo " API:      http://$$(grep DOMAIN .env | cut -d= -f2):8000/api/v1/health"
-	@echo " n8n:      http://$$(grep DOMAIN .env | cut -d= -f2):5678"
 	@echo "=========================================="
 
 shell-db:
@@ -36,6 +35,7 @@ seed:
 status:
 	docker compose ps
 
+# Production helpers
 prod-logs:
 	docker compose logs -f --tail=100
 

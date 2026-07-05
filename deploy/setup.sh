@@ -4,13 +4,15 @@ set -euo pipefail
 echo "=== AgentMarket — One-Click Deploy ==="
 echo ""
 
+# Check prerequisites
 for cmd in curl docker git; do
     if ! command -v "$cmd" &>/dev/null; then
-        echo "Error: $cmd not found."
+        echo "Error: $cmd not found. Install it first."
         exit 1
     fi
 done
 
+# Docker Compose v2 check
 if ! docker compose version &>/dev/null; then
     echo "Error: docker compose v2 not found."
     exit 1
@@ -28,6 +30,7 @@ else
     cd "$REPO_DIR"
 fi
 
+# .env check
 if [ ! -f .env ]; then
     if [ -f .env.example ]; then
         cp .env.example .env
@@ -45,7 +48,12 @@ if [ ! -f .env ]; then
     exit 0
 fi
 
+# Pull latest images
+echo "Pulling Docker images..."
 docker compose pull --quiet
+
+# Start services
+echo "Starting services..."
 docker compose up -d
 
 echo ""
@@ -55,7 +63,6 @@ echo "=========================================="
 DOMAIN=$(grep "^DOMAIN=" .env | cut -d= -f2)
 echo " URL:  http://${DOMAIN}:80"
 echo " API:  http://${DOMAIN}:80/api/v1/health"
-echo " n8n:  http://${DOMAIN}:80/n8n"
 echo ""
 echo " Check status: docker compose ps"
 echo " View logs:    docker compose logs -f"
