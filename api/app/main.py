@@ -13,7 +13,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="AgentMarket API", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Openfield API", version="0.2.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -28,7 +28,7 @@ health_router = APIRouter()
 
 @health_router.get("/health")
 async def health():
-    return {"status": "ok", "version": "0.1.0"}
+    return {"status": "ok", "version": "0.2.0"}
 
 
 app.include_router(health_router, prefix="/api/v1", tags=["health"])

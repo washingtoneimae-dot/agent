@@ -14,7 +14,7 @@ build:
 
 deploy: up
 	@echo "=========================================="
-	@echo " AgentMarket deployed!"
+	@echo " Openfield deployed!"
 	@echo " Frontend: http://$$(grep DOMAIN .env | cut -d= -f2):3000"
 	@echo " API:      http://$$(grep DOMAIN .env | cut -d= -f2):8000/api/v1/health"
 	@echo "=========================================="
