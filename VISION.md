@@ -1,6 +1,7 @@
-# AgentMarket — Long-Term Vision & Roadmap
+# Openfield — Long-Term Vision & Roadmap
 
-> **The infrastructure layer of the agentic economy.**
+> **Your agent is as unique as you.**
+> The infrastructure layer of the agentic economy.
 > A four-level vertical ascent from skill marketplace to Agentic Operating System.
 
 ---
@@ -9,7 +10,7 @@
 
 The AI industry has built sophisticated **brains** (models like GPT-4, Claude, DeepSeek) and **muscles** (agents, tools, function calling). What's missing is the **body** — the design language, operating environment, and UI/UX infrastructure that makes agents usable and trustworthy for non-technical users.
 
-AgentMarket fills this gap. It defines **how humans interact with agentic software**.
+Openfield fills this gap. It defines **how humans interact with agentic software**.
 
 ---
 
@@ -28,7 +29,7 @@ Each level generates the data, community, and infrastructure needed to build the
        ▲ built on pipeline data from
   Level 2: Workflow Templates (Month 3 – Year 1)
   End-to-end automation patterns
-  n8n · Zapier · Make.com · LangGraph · CrewAI
+  LangGraph · CrewAI · n8n · Zapier · Make.com
        ▲ built on usage data from
   Level 1: Skill Marketplace (Now – Month 6)
   Skill Creation Files · Complete Skills
@@ -73,7 +74,7 @@ Each level generates the data, community, and infrastructure needed to build the
 **What it is:** End-to-end automation templates for major agent orchestration platforms. Not just individual skills — full pipelines.
 
 **Product:**
-- Ready-to-use blueprints for n8n, Zapier, Make.com, LangGraph, CrewAI
+- Ready-to-use blueprints for LangGraph, CrewAI, n8n, Zapier, Make.com
 - Multi-agent orchestration patterns
 - Human-in-the-loop workflow templates
 - Agent-to-agent handoff protocols
@@ -85,10 +86,8 @@ Each level generates the data, community, and infrastructure needed to build the
 - Enterprise workflow template packs
 
 **Moat:**
-- API integration lock-in: developer teams that integrate AgentMarket API into their agent dashboards face high switching costs
+- API integration lock-in: developer teams that integrate Openfield API into their agent dashboards face high switching costs
 - Workflow data reveals which agent pipelines create the most value — this data is proprietary and compounding
-
-**What it feeds to Level 3:** Pipeline usage data reveals the specific UI/UX requirements for agent interfaces. You can't design an agent OS in a vacuum — you need to see how agents are actually strung together in production.
 
 ---
 
@@ -96,58 +95,33 @@ Each level generates the data, community, and infrastructure needed to build the
 
 **What it is:** Standardized UI/UX component templates for agent-native applications. The building blocks of the Agentic OS.
 
-**Product — Core Components:**
+**Core Components:**
 
 | Component | Purpose |
 |-----------|---------|
 | **Agent Cards** | Visualize agent status, available tools, memory state, current task |
-| **Task Queue Visualizations** | Manage asynchronous agent jobs — see what's running, queued, completed |
-| **Human-in-the-Loop Consoles** | Standardized interfaces for when an agent needs human approval or input |
-| **Memory Browsers** | UI for visualizing what an agent knows — inspect, edit, and manage agent context |
-| **Permission Dashboards** | Unified view of what each agent has access to — tools, APIs, files, databases |
-| **Agent-to-Agent Communication Panels** | Visualize inter-agent handoffs and collaboration |
+| **Task Queue Visualizations** | Manage asynchronous agent jobs |
+| **Human-in-the-Loop Consoles** | Standardized interfaces for agent approval workflows |
+| **Memory Browsers** | UI for visualizing and managing agent context |
+| **Permission Dashboards** | Unified view of agent access rights |
+| **Agent-to-Agent Communication Panels** | Visualize inter-agent handoffs |
 
-**Monetization:**
-- Licensing individual components
-- Full design system licenses for startups
-- Enterprise white-label design systems
+**Monetization:** Licensing components, full design system licenses for startups, enterprise white-label design systems.
 
-**Moat — The Design System Standard:**
-If AgentMarket's component templates become the default interface language for agents — similar to how Material Design became the default for Android — it creates massive platform-level lock-in. Developers build against the standard, users expect the standard, and competitors can't displace it without rebuilding the entire ecosystem.
-
-This is what Apple did with the desktop metaphor in 1984 and iOS design in 2008. AgentMarket aims to do the same for the agentic era.
+**Moat — The Design System Standard:** If Openfield's templates become the default interface language for agents — similar to Material Design for Android — it creates massive platform-level lock-in.
 
 ---
 
 ## Level 4: Agentic OS (Year 2–4)
 
-**What it is:** A full Agentic Operating System — a browser-based or desktop shell designed to be the "body" for AI "brains." The canonical environment where humans and agents coexist.
+**What it is:** A full Agentic Operating System — a browser-based or desktop shell designed to be the "body" for AI "brains."
 
 **Core Components:**
-
-### Agent Registry
-A "home screen" where installed agents are treated as first-class citizens — not buried in a terminal or API. Each agent has a card showing status, capabilities, recent activity, and resource usage.
-
-### Knowledge Layer
-Replaces traditional file systems with memory and context management. Instead of folders and files, users manage **what agents know** — their context windows, long-term memory stores, and shared knowledge bases.
-
-### Async-Native Task Manager
-Agents don't work synchronously. The OS manages long-running agent tasks, allows pausing/resuming/canceling, and surfaces results when they're ready.
-
-### Permission Manager
-A unified trust dashboard. Users grant and revoke agent access to tools, APIs, files, and databases from a single interface. Fine-grained: "This agent can read my emails but cannot send them."
-
-### Integrated Skill Store
-The Level 1 marketplace embedded directly into the OS. Users browse, install, and update agent skills without leaving their environment.
-
-**Monetization:**
-- Enterprise API tiers (high-volume programmatic access)
-- White-labeling the entire platform for large organizations
-- Integrated Skill Store (ongoing marketplace revenue)
-- Premium OS features and advanced agent management tools
-
-**Moat:**
-The OS runs on the accumulated knowledge and community of all prior levels. A competitor can't replicate the OS without the marketplace data, workflow patterns, and design templates built over years.
+- **Agent Registry** — agents as first-class citizens with status, tools, and capabilities
+- **Knowledge Layer** — replaces file systems with memory and context management
+- **Async-Native Task Manager** — manages long-running agent tasks
+- **Permission Manager** — unified trust dashboard
+- **Integrated Skill Store** — marketplace embedded directly in the OS
 
 ---
 
@@ -173,8 +147,6 @@ New users enter through the OS
 More users → more skills → more data → better OS
 ```
 
-The flywheel means each level has lower customer acquisition cost than the previous. The OS feeds users back into the marketplace, which feeds data back into the OS. A closed loop that accelerates over time.
-
 ---
 
 ## Token Economy
@@ -187,9 +159,8 @@ The flywheel means each level has lower customer acquisition cost than the previ
 
 ### Future (v2 — Quality Staking)
 - Contributors must **stake tokens** to publish files
-- If content is flagged and removed, staked tokens are forfeited
+- Flagged content = forfeited stake
 - High-quality contributors earn staking rewards
-- Economic incentive for quality, not just quantity
 
 ---
 
@@ -199,34 +170,34 @@ The ultimate defensibility is the **design language**:
 
 - **Apple Macintosh (1984):** Desktop metaphor — every OS copied it.
 - **Apple iOS (2008):** Mobile design — every phone copied it.
-- **Google Material Design (2014):** Android's visual language — became ecosystem default.
-- **AgentMarket (2026-2028):** Agentic Design Language — defines how humans interact with agentic software.
+- **Google Material Design (2014):** Android's visual language.
+- **Openfield (2026-2028):** Agentic Design Language — defines how humans interact with agentic software.
 
-The key insight: **this cannot be designed theoretically.** It must emerge bottom-up from real usage data. That's why the four-level ascent is mandatory.
+The key insight: **this cannot be designed theoretically.** It must emerge bottom-up from real usage data.
 
 ---
 
 ## Why This Wins
 
-1. **Data moat compounds.** Each level generates proprietary data that makes the next level better — impossible to replicate from scratch.
-2. **Network effects at every level.** Marketplace (buyers + sellers), Workflows (platforms + templates), Design (developers + components), OS (users + agents).
-3. **Switching costs increase.** By Level 3, developers build against AgentMarket's design system. By Level 4, users organize their agent lives around the OS.
-4. **Bottom-up beats top-down.** Competitors designing an "agent OS" in a vacuum will build the wrong thing. AgentMarket builds from real data.
-5. **The marketplace is the Trojan horse.** Skill Creation Files seem niche — they're the data engine for the entire stack. Every download, review, and chatroom tip feeds the flywheel.
+1. **Data moat compounds.** Each level generates proprietary data that makes the next level better.
+2. **Network effects at every level.** Marketplace, Workflows, Design, OS.
+3. **Switching costs increase.** By Level 3, developers build against Openfield's design system.
+4. **Bottom-up beats top-down.** Competitors designing an "agent OS" in a vacuum build the wrong thing.
+5. **The marketplace is the Trojan horse.** Every download feeds the flywheel.
 
 ---
 
 ## Current Status: Level 1 (MVP v0.2.0)
 
 - ✅ Skill Creation File marketplace live
-- ✅ Tree-structured file system (parent → child → grandchild)
+- ✅ Tree-structured file system
 - ✅ Query-depth-aware search
 - ✅ Per-file chatrooms with threading
-- ✅ API key authentication for agent dashboards
+- ✅ API key authentication
 - ✅ Stripe subscription integration ($9/mo)
 - ✅ AI provider abstraction (OpenRouter / DeepSeek / OpenAI)
-- ✅ Composite scoring algorithm with extraction-count weighting
-- ✅ Admin panel with file moderation, user management, rank recalculation
+- ✅ Composite scoring algorithm
+- ✅ Admin panel
 - 🔜 Token economy implementation
 - 🔜 Quality staking mechanism
 - 🔜 Workflow template format specification (Level 2 prep)

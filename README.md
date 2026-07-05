@@ -1,6 +1,8 @@
-# AgentMarket — The Agentic Asset Marketplace
+# Openfield — The Agentic Asset Marketplace
 
-A review-powered marketplace for **Skill Creation Files** — recipes that teach any AI agent how to build custom skills for specific domains.
+> **Your agent is as unique as you.**
+
+A review-powered marketplace for **Skill Creation Files** — recipes that teach any AI agent how to build custom skills for specific domains. The infrastructure layer of the agentic economy.
 
 > **Status:** MVP v0.2.0
 > **Stack:** Docker · FastAPI · PostgreSQL · React · MinIO · Stripe
@@ -85,6 +87,8 @@ Floor: 10.0. Recalculated via admin endpoint.
 - **[API.md](./API.md)** — Full endpoint reference with curl examples
 - **[TECHNICAL.md](./TECHNICAL.md)** — Architecture, database schema, subsystems, dev setup, deployment, troubleshooting
 - **[FORMAT.md](./FORMAT.md)** — Skill Creation File format specification
+- **[VISION.md](./VISION.md)** — Four-level roadmap from marketplace to Agentic OS
+- **[SCORECARD.md](./SCORECARD.md)** — 10-dimension project scorecard with competitive analysis
 
 ## Marketplace Contents (Seeded)
 
@@ -119,11 +123,13 @@ See [.env.example](./.env.example) for all required vars. At minimum you need `D
 ## Project Structure
 
 ```
-agent/
+openfield/
 ├── docker-compose.yml        # 6-service stack
 ├── API.md                    # Full API documentation
 ├── TECHNICAL.md              # Technical deep-dive
 ├── FORMAT.md                 # Skill Creation File spec
+├── VISION.md                 # Long-term roadmap
+├── SCORECARD.md              # Competitive scorecard
 ├── api/
 │   ├── app/
 │   │   ├── main.py           # FastAPI entry point
@@ -141,7 +147,8 @@ agent/
 │       └── pages/            # Browse, FileDetail, Upload, Dashboard, Admin
 ├── docker/
 │   └── nginx/                # nginx config + SSL
-└── deploy/                   # VPS deployment scripts
+├── deploy/                   # VPS deployment scripts
+└── marketing/                # X threads and outreach
 ```
 
 ## License
