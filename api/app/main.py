@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from app.config import settings
 from app.database import init_db
-from app.routes import auth, users, files, tokens, reviews, api_keys
+from app.routes import auth, users, files, tokens, reviews, api_keys, admin
 
 
 @asynccontextmanager
@@ -38,3 +38,4 @@ app.include_router(files.router, prefix="/api/v1/files", tags=["files"])
 app.include_router(tokens.router, prefix="/api/v1/tokens", tags=["tokens"])
 app.include_router(reviews.router, prefix="/api/v1/reviews", tags=["reviews"])
 app.include_router(api_keys.router, prefix="/api/v1/api-keys", tags=["api-keys"])
+app.include_router(admin.router, prefix="/api/v1/admin", tags=["admin"])
