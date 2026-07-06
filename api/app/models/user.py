@@ -13,6 +13,7 @@ class User(Base):
     is_subscribed = Column(Boolean, default=False)
     subscribed_since = Column(DateTime(timezone=True), nullable=True)
     stripe_customer_id = Column(String(100), nullable=True)
+    wallet_balance = Column(Float, default=0.0)
     reputation_score = Column(Float, default=0.0)
     is_verified = Column(Boolean, default=False)
     is_active = Column(Boolean, default=True)
