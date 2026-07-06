@@ -42,6 +42,8 @@ class File(Base):
     download_count = Column(Integer, default=0)
     extraction_count = Column(Integer, default=0)
     children_count = Column(Integer, default=0)
+    rank_score = Column(Float, default=0.0, index=True)
+    price_tokens = Column(Integer, default=100)
     score = Column(Float, default=10.0, index=True)
     status = Column(Enum(FileStatus), default=FileStatus.PENDING)
     storage_path = Column(String(500))
